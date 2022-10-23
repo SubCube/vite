@@ -20,6 +20,12 @@ const router = createRouter({
       name: 'about',
       component: () => import('@/pages/AboutPage.vue'),
       meta: { title: 'About' }
+    },
+    {
+      path: '/todo',
+      name: 'todo',
+      component: () => import('@/pages/ToDoPage.vue'),
+      meta: { title: 'To Do' }
     }
   ]
 })

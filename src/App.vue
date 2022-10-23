@@ -4,6 +4,7 @@
   <nav>
     <router-link :to="{ name: 'main' }">Main Page</router-link>
     <router-link :to="{ name: 'about' }">About Page</router-link>
+    <router-link :to="{ name: 'todo' }">ToDo Page</router-link>
   </nav>
   <router-view />
 </template>
