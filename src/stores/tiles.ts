@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { reactive, ref } from 'vue'
+import { reactive, watch } from 'vue'
 
 export type Tile = {
   id: number
@@ -10,6 +10,11 @@ export type Tile = {
 
 export const useToDoStore = defineStore('tiles', () => {
   const tiles: Array<Tile> = reactive([])
+
+  if (localStorage.getItem('tiles')) tiles.push(...JSON.parse(<string>localStorage.getItem('tiles')))
+  watch(tiles, newVal => {
+    localStorage.setItem('tiles', JSON.stringify(newVal)), { deep: true, immediate: true }
+  })
 
   function addRecord(item: Tile) {
     tiles.push(item)
