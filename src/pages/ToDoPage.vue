@@ -5,7 +5,7 @@ import { storeToRefs } from 'pinia'
 
 import ToDoCard from '@/components/TODO/ToDoCard.vue'
 
-const { addRecord, changeTilestatus } = useToDoStore()
+const { addRecord, changeTileStatus } = useToDoStore()
 const { tiles } = storeToRefs(useToDoStore())
 
 const title = ref('')
@@ -25,7 +25,7 @@ function addNewItem(item: Tile) {
     <button type="submit">Add TODO</button>
   </form>
   <div class="tiles-wrapper">
-    <ToDoCard v-for="tile in tiles" :key="tile.id" :card="tile" @change-status="id => changeTilestatus(id)" />
+    <ToDoCard v-for="tile in tiles" :key="tile.id" :card="tile" @change-status="id => changeTileStatus(id)" />
   </div>
 </template>
 

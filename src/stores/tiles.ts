@@ -19,7 +19,7 @@ export const useToDoStore = defineStore('tiles', () => {
   function addRecord(item: Tile) {
     tiles.push(item)
   }
-  function changeTilestatus(id: number) {
+  function changeTileStatus(id: number) {
     const index = tiles.findIndex(item => item.id === id)
     tiles[index].done = !tiles[index].done
   }
@@ -27,6 +27,6 @@ export const useToDoStore = defineStore('tiles', () => {
   return {
     tiles,
     addRecord,
-    changeTilestatus
+    changeTileStatus
   }
 })
