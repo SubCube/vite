@@ -4,3 +4,5 @@
 
 Add pinia
 Start coding
+
+Add custom styles with css
